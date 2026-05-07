@@ -29,11 +29,11 @@ from tinytuya.core import Device
         set_dpsUsed(dps_to_request)        # add data points (DPS) to request
         add_dps_to_request(index)          # add data point (DPS) index set to None
         set_retry(retry=True)              # retry if response payload is truncated
-        set_status(on, switch=1, nowait)   # Set status of switch to 'on' or 'off' (bool)
+        set_status(on, switch=1, nowait)   # Set status of device to 'on' or 'off' (bool)
         set_value(index, value, nowait)    # Set int value of any index.
         heartbeat(nowait)                  # Send heartbeat to device
         updatedps(index=[1], nowait)       # Send updatedps command to device
-        turn_on(switch=1, nowait)          # Turn on device / switch #
+        turn_on(switch=1, nowait)          # Turn on device
         turn_off(switch=1, nowait)         # Turn off
         set_timer(num_secs, nowait)        # Set timer for num_secs
         set_debug(toggle, color)           # Activate verbose debugging output

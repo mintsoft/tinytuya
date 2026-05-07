@@ -266,7 +266,7 @@ device = TowelRailHeaterDevice.TowelRailHeaterDevice(
       version=3.4)
 
 # Print all known values
-device.print_all()
+print(device.status_json())
 
 print(device.get_operating_mode())
 print(device.get_current_temperature())
