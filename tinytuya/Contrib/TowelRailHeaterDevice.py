@@ -58,8 +58,8 @@ class TowelRailHeaterDevice(Device):
 
     def __init__(self, *args, **kwargs):
         # set the default version to 3.4 as that is what my device uses
-        if 'version' not in kwargs or not kwargs['version']:
-            kwargs['version'] = 3.4
+        if "version" not in kwargs or not kwargs["version"]:
+            kwargs["version"] = 3.4
         super(TowelRailHeaterDevice, self).__init__(*args, **kwargs)
 
     def status_json(self):
@@ -70,7 +70,7 @@ class TowelRailHeaterDevice(Device):
             "Set temperature": self.tuya_temperature_to_celsius(status[self.DPS_SET_TEMP]),
             "Current temperature": self.tuya_temperature_to_celsius(status[self.DPS_CUR_TEMP]),
             "Operating mode": status[self.DPS_MODE],
-            "Timer left": self.tuya_duration_to_minutes(status[self.DPS_TIMER]),
+            "Timer": self.tuya_duration_to_minutes(status[self.DPS_TIMER]),
         }
 
     def tuya_temperature_to_celsius(self, temperature):
@@ -129,7 +129,7 @@ class TowelRailHeaterDevice(Device):
         return self.tuya_duration_to_minutes(status[self.DPS_TIMER])
 
     def set_timer(self, delay):
-        if delay < 30 or delay > 8 * 60: # 8 hours maximum
+        if delay < 30 or delay > 8 * 60:  # 8 hours maximum
             return
         if delay % 30 != 0:
             return
